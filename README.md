@@ -1,13 +1,17 @@
 # Renamer
 
-So I coded Renamer from scratch because I desperately needed to rename a ton of images real quick and to nuke all metadata as well.
+> **Note:** Laydeez and gen'lemen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
 
-It's just for fun, but DO NOT GET IT TWISTED, THIS IS STILL LEGIT PRO TIER STUFF.
+> **Just if someone really care (doubt that lol):** This project will not get any more updates or further development. I am completely done coding this one  **Yet** Hope y'all like it.
 
-Renamer is a PySide6 desktop app for batch-renaming images, either in place or as copies in a ZIP archive. It keeps the repetitive work moving while showing progress, status, and file-level errors.
+# What's the thing
 
+Renamer is a PySide6 app for batch renaming images with live progress tracking and error reporting. You can mix and match your workflow depending on what you need:
 
-Note: This project will not get any more updates or further development I am completely done coding this one! Hope y'all like it.
+* **Rename only:** Updates original files directly.
+* **Rename + clear metadata:** Removes hidden data while updating files.
+* **Rename + ZIP archive:** Saves renamed copies into a ZIP.
+* **Rename + clear metadata + ZIP archive:** Cleans and copies files straight into a ZIP.
 
 ## Get Renamer
 
