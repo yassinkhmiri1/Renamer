@@ -1,0 +1,92 @@
+# Renamer
+
+So I coded Renamer from scratch because I desperately needed to rename a ton of images real quick and to nuke all metadata as well.
+
+It's just for fun, but DO NOT GET IT TWISTED, THIS IS STILL LEGIT PRO TIER STUFF.
+
+Renamer is a PySide6 desktop app for batch-renaming images, either in place or as copies in a ZIP archive. It keeps the repetitive work moving while showing progress, status, and file-level errors.
+
+
+Note: This project will not get any more updates or further development I am completely done coding this one! Hope y'all like it.
+
+## Get Renamer
+
+There are two ways to use Renamer:
+
+1. **Download the ready-to-use app:** Open this repository's **Releases** page, download `Renamer-Setup.exe`, and run it. The Windows setup wizard installs Renamer, adds a desktop shortcut, and registers a standard Windows uninstaller. No Python, PowerShell, or developer tools needed.
+2. **Run from source:** Clone or download this repository, install Python 3.10 or newer, and follow the source setup below. This is the option if you'd like to inspect the code.
+
+The setup installer supports **Windows 10 and Windows 11 on standard x64 PCs**.
+
+### Run from source
+
+From the project folder, install the runtime dependencies and start the application:
+
+```text
+python -m pip install -r requirements.txt
+python main.py
+```
+
+## What it does
+
+- **Batch renaming:** Choose numbered names such as `Image_001.jpg`, a custom prefix such as `Holiday_001.jpg`, or capture-date names based on available EXIF data with a file-timestamp fallback.
+- **In-place or ZIP output:** Rename the files in their current folder, or create renamed copies in a ZIP while leaving the originals untouched.
+- **Backups and rollback:** In-place jobs make a verified backup before changing files. The persistent backup is on by default. If you switch it off, Renamer still keeps a temporary rollback copy until the job succeeds. Cancelling restores the original files.
+- **Collision protection:** Renamer adds a numeric suffix rather than overwriting an unrelated file.
+- **Failure recovery:** Individual in-place file failures are logged without stopping the rest of the batch. **Try failed again** retries failed files.
+- **Metadata cleanup:** Lossless cleanup is implemented for JPEG and PNG. Other supported formats are validated but left unchanged.
+- **Progress and status:** Follow the current state, progress bar, recent-event log, and state artwork. Hover over controls for helpful tips.
+- **Optional audio:** Background music, WAV state cues, and generated short tones are supported, but audio is not required to use Renamer.
+
+Renamer scans regular, non-symlink image files directly inside the selected folder; it does not search subfolders. It preserves file formats and does not convert images.
+
+## Supported image formats
+
+Renamer recognizes these filename extensions:
+
+`.jpg`, `.jpeg`, `.png`, `.webp`, `.bmp`, `.tif`, `.tiff`, and `.gif`
+
+An extension makes a file a scan candidate; it does not guarantee that its contents are valid image data.
+
+### What metadata cleanup actually changes
+
+- **JPEG:** Removes supported metadata segments and comments by filtering the encoded file stream. Compressed image data is copied as-is; ICC profiles and Adobe color-interpretation markers are preserved.
+- **PNG:** Removes selected metadata chunks with chunk lengths and checksums validated. Image data and selected rendering, color, transparency, and animation chunks are retained.
+- **WebP, BMP, TIFF, and GIF:** Validated when cleanup is requested, then left byte-for-byte unchanged. Renamer does not strip metadata from these formats. This avoids changing image quality, palettes, animation, or multipage content through re-encoding.
+
+When cleanup is turned off for an in-place rename, files are copied and renamed without being decoded. ZIP mode requests cleanup automatically: JPEG and PNG may be cleaned, while the other supported formats stay unchanged.
+
+## Project layout
+
+```text
+Renamer/
+├── main.py                 # Application startup and rotating log setup
+├── core/
+│   ├── audio.py            # Optional music and sound cues
+│   ├── backup_manager.py   # Verified backups and rollback
+│   ├── metadata.py         # JPEG/PNG metadata filtering
+│   └── renamer.py          # Filename planning and collision handling
+├── workers/
+│   └── image_worker.py     # Background processing and ZIP export
+├── ui/
+│   └── main_window.py      # PySide6 desktop interface
+├── assets/
+│   ├── audio/              # Optional music and sound cues
+│   ├── icon.ico
+│   └── *.jpg               # State artwork
+├── installer/
+│   └── Renamer.iss         # Windows setup and uninstaller definition
+└── requirements.txt        # Runtime dependencies for source users
+```
+
+## Audio and logs
+
+If `assets/audio/main_theme.mp3` is present, it loops while Renamer is open. Optional `ready.wav`, `working.wav`, `caution.wav`, `error.wav`, and `success.wav` files can provide state cues; if a cue is missing, Renamer can generate a short tone. Audio-device or playback problems are logged and do not stop image processing.
+
+Rotating logs are stored under `RENAMER_logs` in Qt's application-data folder. If Qt does not provide a data location, Renamer falls back to `~/RENAMER/RENAMER_logs`.
+
+## License
+
+Renamer is released under the MIT License. See [LICENSE](LICENSE) and [COPYRIGHT.md](COPYRIGHT.md) for the full notices.
+
+Copyright © 2026 Mohamed Yassin Khmiri
