@@ -1,6 +1,6 @@
 # Renamer
 
-> **Note:** Laydeez and gen'lemen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
+> **Note:** Ladies and mental gen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
 
 > **Just if someone really care (doubt that lol):** This project will not get any more updates or further development. I am completely done coding this one  **Yet** Hope y'all like it.
 
