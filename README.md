@@ -13,6 +13,25 @@ Renamer is a PySide6 app for batch renaming images with live progress tracking a
 * **Rename + ZIP archive:** Saves renamed copies into a ZIP.
 * **Rename + clear metadata + ZIP archive:** Cleans and copies files straight into a ZIP.
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/main-window.png" alt="Renamer main window with the Prefix rename style selected" width="900">
+</p>
+<p align="center"><em>Main window: pick a folder, choose a rename style, choose where to save, then hit Rename images.</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/success.png" alt="Renamer after a successful batch" width="440">
+  &nbsp;
+  <img src="docs/screenshots/error.png" alt="Renamer showing an error when no supported images are found" width="440">
+</p>
+<p align="center"><em>Live status: a finished batch (left) and a clear error when a folder has no supported images (right).</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/folder-picker.png" alt="Renamer folder picker dialog" width="900">
+</p>
+<p align="center"><em>Choose a folder with the standard Windows picker, or type the path in directly.</em></p>
+
 ## Get Renamer
 
 There are two ways to use Renamer:
@@ -78,6 +97,8 @@ Renamer/
 │   ├── audio/              # Optional music and sound cues
 │   ├── icon.ico
 │   └── *.jpg               # State artwork
+├── docs/
+│   └── screenshots/        # Images used in this README
 ├── installer/
 │   └── Renamer.iss         # Windows setup and uninstaller definition
 └── requirements.txt        # Runtime dependencies for source users
