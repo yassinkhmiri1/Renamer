@@ -1,7 +1,5 @@
 <h1 align="center">Renamer</h1>
 
-<p align="center"><em>Because "IMG_4827 (3) final FINAL.jpg" is not a name, it's a cry for help.</em></p>
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/GUI-PySide6-41cd52?logo=qt&logoColor=white" alt="PySide6">
