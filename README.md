@@ -1,5 +1,6 @@
 <h1 align="center">Renamer</h1>
 
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/GUI-PySide6-41cd52?logo=qt&logoColor=white" alt="PySide6">
@@ -9,13 +10,13 @@
 
 > **Note:** Ladies and mental gen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
 
-> **Just if someone really care (doubt that xD):** This project will not get any more updates or further development. I am completely done coding this one  **Yet** Hope y'all like it.
+> **Just if someone really care (I doubt that LOL):** This project will not get any more updates or further development. I am completely done coding this one  **Yet** Hope y'all like it.
 
 ---
 
 ## What's the thing
 
-Renamer is a PySide6 app that renames your images in bulk, shows you live progress, and tells you straight up when something goes wrong (no silent failures, no drama). Pick your own adventure:
+Renamer is a PySide6 app that renames your images in bulk, shows you live progress, and tells you if something went wrong:
 
 * **Rename only:** Updates original files directly. Quick and simple.
 * **Rename + clear metadata:** Removes hidden data while updating files. Sneaky info, be gone.
@@ -40,11 +41,11 @@ Renamer is a PySide6 app that renames your images in bulk, shows you live progre
 <p align="center">
   <img src="docs/screenshots/folder-picker.png" alt="Renamer folder picker dialog" width="80%">
 </p>
-<p align="center"><em>Choose a folder with the standard Windows picker, or just type the path in directly. Your call.</em></p>
+<p align="center"><em>Choose a folder with the standard Windows picker.</em></p>
 
 ### Wait, why Dexter's Laboratory?
 
-> **PS:** you may be wondering why I used Dexter's Laboratory as the main theme. Well, I was just looking for inspo on Pinterest for a Renamer icon and randomly saw Dexter et VOILA!.
+> you may be wondering why I used Dexter's Laboratory as the main theme. Well, I was just looking for inspo on Pinterest for a Renamer icon and randomly saw Dexter et VOILA!.
 >
 > **I know I know none will ever care but just in case:** *Dexter's Laboratory belongs to its respective owners. This is a fan-made, non-commercial project and is not affiliated with or endorsed by them.*
 
