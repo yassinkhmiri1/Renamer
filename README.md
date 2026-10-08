@@ -10,13 +10,13 @@
 
 > **Note:** Ladies and mental gen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
 
-> **Just if someone care (I doubt that LOL):** This project will not get any more updates or further development. I am completely done coding this one  **Yet** Hope y'all like it.
+> **Just if someone care (I doubt that LOL):** This project will not get any more updates or further development, **completely done coding this one YET Hope y'all like it tho**
 
 ---
 
 ## What's the thing
 
-Renamer is a PySide6 app that renames your images in bulk, shows you live progress, and tells you if something went wrong:
+Renamer is a PySide6 app that renames your images in **ONE CLICK**, shows you live progress, and errors you if something went wrong:
 
 * **Rename only:** Updates original files directly. Quick and simple.
 * **Rename + clear metadata:** Removes hidden data while updating files. Sneaky info, be gone.
