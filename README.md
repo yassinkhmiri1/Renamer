@@ -47,16 +47,16 @@ Renamer is a PySide6 app that renames your images in **ONE CLICK**, shows you li
 
 > you may be wondering why I used Dexter's Laboratory as the main theme. Well, I was just looking for inspo on Pinterest for a Renamer icon and randomly saw Dexter et VOILA!.
 >
-> **I know I know none will ever care but just in case:** *Dexter's Laboratory belongs to its respective owners. This is a fan-made, non-commercial project and is not affiliated with or endorsed by them.*
+> **I know I know likely none will ever care but just in case:** *Dexter's Laboratory belongs to its respective owners. This is a fan-made, non-commercial project and is not affiliated with or endorsed by them.*
 
 ---
 
 ## Get Renamer
 
-Two ways to join the fun:
+There 2 ways to download this project (one for normal users and second for devs or someone who's interested to take look at the code etc..):
 
-1. **Download the ready-to-use app (the lazy way, no shame):** Open this repository's **[Releases](../../releases)** page, download `Renamer-Setup.exe`, and run it. The Windows setup wizard installs Renamer, adds a desktop shortcut, and registers a standard Windows uninstaller. No Python, PowerShell, or developer tools needed.
-2. **Run from source (the curious way):** Clone or download this repository, install Python 3.10 or newer, and follow the source setup below. This is the option if you'd like to inspect the code and see what's cooking.
+1. **Download the setup.exe (Recommended):** Open this repository's **[Releases](../../releases)** page, download `Renamer-Setup.exe`, and run it. The Windows setup wizard installs Renamer, adds a desktop shortcut, and registers a standard Windows uninstaller. No Python, PowerShell, or developer tools needed.
+2. **Run from source:** Clone or download this repository, install Python 3.10 or newer, and follow the source setup below. This is the option if you'd like to inspect the code and see what's cooking.
 
 The setup installer supports **Windows 10 and Windows 11 on standard x64 PCs**.
 
