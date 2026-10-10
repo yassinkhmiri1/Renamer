@@ -86,7 +86,7 @@ Renamer scans regular, non-symlink image files directly inside the selected fold
 ---
 
 > [!IMPORTANT]
-> in order to make this project easier to understand, feel free to check and read [DEV.md](DEV.md) for a clear, practical overview of the setup, structure and application flow. For a much deeper understanding, I also recommend reading the **[Renamer Developer & User Guide (PDF)](docs/Renamer_devPDF.pdf)**, which includes everything below:
+> in order to make this project easier to understand, feel free to check and read [DEV.md](DEV.md) for a clear, practical overview of the setup, structure and application flow. For a much deeper understanding, I also recommend reading the **[Renamer Developer & User Guide (PDF)](Renamer_devPDF.pdf)**, which includes everything below:
 >
 > ### What the PDF gives you
 >
