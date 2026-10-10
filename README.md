@@ -10,7 +10,7 @@
 
 > **Note:** Ladies and mental gen, it might not be sounds pro but this was actually one of my very very first projects years ago! I was about to delete it, but then thought, why not publish it for fun?
 
-> **Just if someone care (I doubt that LOL):** This project will not get any more updates or further development, **completely done coding this one YET Hope y'all like it tho**
+> **Just if someone care (doubt that Lol):** This project will not get any more updates or further development, **HOPE Y'ALL LIKE IT THO**
 
 ---
 
@@ -75,24 +75,57 @@ python main.py
 
 - **Batch renaming:** Choose numbered names such as `Image_001.jpg`, a custom prefix such as `Holiday_001.jpg`, or capture-date names based on available EXIF data with a file-timestamp fallback. Name them however you like.
 - **In-place or ZIP output:** Rename the files in their current folder, or create renamed copies in a ZIP while leaving the originals untouched.
-- **Backups and rollback:** In-place jobs make a verified backup before changing files. The persistent backup is on by default. If you switch it off, Renamer still keeps a temporary rollback copy until the job succeeds. Cancelling restores the original files. Basically, you can't break stuff (we tried).
-- **Collision protection:** Renamer adds a numeric suffix rather than overwriting an unrelated file. No files get bullied here.
-- **Failure recovery:** Individual in-place file failures are logged without stopping the rest of the batch. **Try failed again** retries failed files. One bad apple won't ruin the bunch.
+- **Backups and rollback:** In-place jobs make a verified backup before changing files. The persistent backup is on by default. If you switch it off, Renamer still keeps a temporary rollback copy until the job succeeds. Cancelling restores the original files.
+- **Collision protection:** Renamer adds a numeric suffix rather than overwriting an unrelated file.
+- **Failure recovery:** Individual in-place file failures are logged without stopping the rest of the batch. **Try failed again** retries failed files.
 - **Metadata cleanup:** Lossless cleanup is implemented for JPEG and PNG. Other supported formats are validated but left unchanged.
 - **Progress and status:** Follow the current state, progress bar, recent-event log, and state artwork. Hover over controls for helpful tips.
-- **Optional audio:** Background music, WAV state cues, and generated short tones are supported, but audio is not required to use Renamer. Mute it, no hard feelings.
-
+- **Optional audio:** Background music, WAV state cues, and generated short tones are supported, but audio is not required to use Renamer.
 Renamer scans regular, non-symlink image files directly inside the selected folder; it does not search subfolders. It preserves file formats and does not convert images.
 
 ---
+
+> [!IMPORTANT]
+> in order to make this project easier to understand, feel free to check and read [DEV.md](DEV.md) for a clear, practical overview of the setup, structure and application flow. For a much deeper understanding, I also recommend reading the **[Renamer Developer & User Guide (PDF)](docs/Renamer_devPDF.pdf)**, which includes everything below:
+>
+> ### What the PDF gives you
+>
+> **Part 1: For normal users**
+> - What Renamer does, how to install it, and a tour of the window using the real screenshots.
+> - Examples of the three rename styles (Numbered, Prefix, Capture date) and which image formats are supported.
+> - The safety promises (backups, Cancel, collision protection), an FAQ and a glossary.
+>
+> **Part 2: The big picture**
+> - The project's folder map and layer architecture, and how the GUI thread and worker thread talk through signals.
+> - 20 diagrams in total, including:
+>   - class diagrams
+>   - four sequence diagrams (in-place run, ZIP export, cancel and rollback, retry)
+>   - the state diagram for the five app states
+>   - the widget tree of the window
+>   - flowcharts for start-up, the per-file rename, backup, the naming planner, JPEG and PNG cleaning, and audio
+>
+> **Part 3: File by file**
+> - The real source code of every file with its real line numbers, each block followed by a plain-English explanation. This covers `main.py`, `core/renamer.py`, `core/backup_manager.py`, `core/metadata.py`, `core/audio.py`, `workers/image_worker.py` and `ui/main_window.py`, plus `requirements.txt` and the installer script.
+> - Tables listing every class, attribute, variable, constant and method, and the assets, docs and licence files.
+>
+> **Part 4: How the clever parts work**
+> - Atomic file replacement and exclusive file creation.
+> - Naming and collision avoidance, with a worked example.
+> - Backup, verification and rollback.
+> - Cancellation and safe closing, error handling and logging.
+> - Lazy loading of the optional audio.
+>
+> **Part 5: Reference**
+> - An index of every function, a list of constants and magic numbers, and the Windows packaging steps.
+> - A list of small quirks found in the code and how to extend the project (new rename style, WebP cleaning, tests).
+> - Developer troubleshooting tips.
+
 
 ## Supported image formats
 
 Renamer recognizes these filename extensions:
 
 `.jpg`, `.jpeg`, `.png`, `.webp`, `.bmp`, `.tif`, `.tiff`, and `.gif`
-
-An extension makes a file a scan candidate; it does not guarantee that its contents are valid image data. (A file named `cat.jpg` that's secretly a text file is still not a cat.)
 
 ### What metadata cleanup actually changes
 
